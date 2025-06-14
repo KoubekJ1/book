@@ -1,0 +1,12 @@
+.linkbutton {
+  border-radius: 1em;
+  background-color: #343a40;
+  margin-left: 42.5%;
+  margin-right: 42.5%;
+  width: 15%;
+  border: 1px solid #495057;
+}
+
+.linkbutton:hover {
+  filter: brightness(110%);
+}

@@ -1,42 +1,40 @@
 import './HomePage.css'
 
 import Navigation from 'components/navigation/Navigation.jsx'
+import abandoned from 'assets/abandoned.png'
+import dark from 'assets/dark.jpg'
+import town from 'assets/town.jpg'
 import cover from 'assets/cover.jpg'
-import { Col, Container, Row } from 'react-bootstrap'
+import alley from 'assets/alley.jpg'
+import story from 'assets/story.jpg'
+import friends from 'assets/friends.jpg'
+import { Col, Container, Row, Button } from 'react-bootstrap'
+import TitleArticle from 'src/components/titlearticle/TitleArticle'
+import { Link } from 'react-router-dom'
 
 function HomePage() {
+  const content1 = 'Prašina je dobrodružná kniha pro děti a mládež od českého spisovatele Vojtěcha Matochy. Příběh otevírá záhady tajuplného, tichého a nebezpečného místa uprostřed Prahy – Prašiny, kde z neznámých důvodů nefunguje elektřina. Ilustroval ji Karel Osoha.';
+  const content2 = 'Prašina je místo, kde z neznámých důvodů nefunguje elektřina, mobily zhasínají a svět jako by přestal existovat. Úzké uličky, opuštěné domy a podivné ticho vytvářejí dusivou atmosféru, která člověka pohltí. Prašina je tajuplná, nebezpečná a jakoby odříznutá od času – místo, kam se odváží jen ti nejodhodlanější.';
+  const content3 = 'Když do prašiny jednoho dne vkročí Jirka Klimeš, začíná závod s časem, plný nečekaných zvratů, temných tajemství a neviditelného nebezpečí. Odhal, co se v Prašině opravdu skrývá… Pokud se odvážíš.';
+  const content4 = 'Poznej nerozlučnou trojici kamarádů, která se odváží vstoupit tam, kde se jiní bojí jen přiblížit. Jirka, En a Tonda – každý úplně jiný, ale společně tvoří tým, který dokáže čelit tajemstvím Prašiny i nebezpečím, která se skrývají ve tmě. Chceš vědět, co je spojuje a co všechno spolu zažili? Ponoř se do jejich příběhu a objev sílu přátelství v neobyčejném světě bez elektřiny.';
+  const link2 = <Link to="/setting" className="nav-link linkbutton">Číst dále</Link>;
+  const link3 = <Link to="/story" className="nav-link linkbutton">Číst dále</Link>;
+  const link4 = <Link to="/characters" className="nav-link linkbutton">Číst dále</Link>;
+
+const style = {
+  backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + alley + ")"
+}
+
+
   return (
     <>
       <Navigation></Navigation>
-      <Container fluid className='text-center mt-5 p-5 anim'>
-        <Row>
-          <Col>
-            <Container fluid>
-              <Row>
-                <Col>
-                  <h1>Prašina</h1>
-                  <h4>Vojtěch Matocha</h4>
-                </Col>
-              </Row>
-              <Row>
-                <p>
-                  Prašina je dobrodružná kniha pro děti a mládež od českého spisovatele Vojtěcha Matochy. Příběh otevírá záhady tajuplného, tichého a nebezpečného místa uprostřed Prahy – Prašiny, kde z neznámých důvodů nefunguje elektřina. Ilustroval ji Karel Osoha.
-                </p>
-              </Row>
-            </Container>
-          </Col>
-          <Col>
-            <Container fluid>
-              <Row>
-                <img src={cover} alt='Prašina' className='rounded w-50 rounded mx-auto d-block'></img>
-              </Row>
-              <Row>
-                <h4 className='mt-1'>Ilustrace od Karla Osohy</h4>
-              </Row>
-            </Container>
-          </Col>
-        </Row>
-      </Container>
+      <div className='background-long anim' style={style}>
+        <TitleArticle title='Prašina' sub='Vojtěch Matocha' content={content1} img={cover} subimg='Ilustrace od Karla Osohy' />
+        <TitleArticle title='Prostředí' sub='Co je to prašina?' content={content2} img={alley} subimg='Opuštěná čtvrť' linkbutton={link2} />
+        <TitleArticle title='Děj' sub='Napínavý příběh' content={content3} img={story} subimg='Nebezpečná cesta' linkbutton={link3} />
+        <TitleArticle title='Postavy' sub='Nerozdělitelná trojice' content={content4} img={friends} subimg='Přátelé' linkbutton={link4} />
+      </div>
     </>
   )
 }

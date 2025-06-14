@@ -1,0 +1,24 @@
+.imgcontainer {
+  transition-duration: 0.2s;
+  width: 20vw;
+  height: 21vw;
+}
+
+.imgcontainer:hover {
+  width: 21vw;
+  height: 21vw;
+}
+
+.imgcircle {
+  transition-duration: 0.2s;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 10vw;
+  object-fit: cover;
+}
+
+.imgcircle:hover {
+  width: 21vw;
+  height: 21vw;
+  border-radius: 10.5vw;
+}

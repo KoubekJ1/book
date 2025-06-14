@@ -1,28 +1,43 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import 'lib/bootstrap/css/bootstrap.css';
 import './index.css'
 import HomePage from 'src/pages/home/HomePage.jsx'
+import ErrorPage from 'pages/error/ErrorPage.jsx'
 
-import 'lib/bootstrap/css/bootstrap.css';
 import SettingPage from './pages/setting/SettingPage'
 import CharactersPage from './pages/characters/CharactersPage'
+import StoryPage from './pages/story/StoryPage'
+import TheaterPage from './pages/theater/TheaterPage';
+
+import ambianceSound from 'assets/audio/ambiance.opus';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage/>,
-    errorElement: <Error/>
+    errorElement: <ErrorPage/>
   },
   {
     path: '/setting',
     element: <SettingPage/>,
-    errorElement: <Error/>
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: '/story',
+    element: <StoryPage/>,
+    errorElement: <ErrorPage/>
   },
   {
     path: '/characters',
     element: <CharactersPage/>,
-    errorElement: <Error/>
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: '/theater',
+    element: <TheaterPage/>,
+    errorElement: <ErrorPage/>
   }
 ])
 
