@@ -12,6 +12,7 @@ import StoryPage from './pages/story/StoryPage'
 import TheaterPage from './pages/theater/TheaterPage';
 
 import ambianceSound from 'assets/audio/ambiance.opus';
+import AboutPage from './pages/about/AboutPage';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
   {
     path: '/theater',
     element: <TheaterPage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: '/about',
+    element: <AboutPage/>,
     errorElement: <ErrorPage/>
   }
 ])

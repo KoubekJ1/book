@@ -35,6 +35,7 @@ function Navigation() {
               <Link to="/story" className='nav-link'>Děj</Link>
               <Link to="/characters" className='nav-link'>Postavy</Link>
               <Link to="/theater" className='nav-link'>Divadlo</Link>
+              <Link to="/about" className='nav-link'>O stránce</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

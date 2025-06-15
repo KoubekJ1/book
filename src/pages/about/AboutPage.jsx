@@ -1,0 +1,112 @@
+import Navigation from 'src/components/navigation/Navigation';
+import './AboutPage.css';
+
+import bg from 'assets/2.jpg';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { useRef, useState } from 'react';
+
+const style = {
+  backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")"
+}
+
+function validateName(name)
+{
+  return name.trim().split(" ").length == 2
+}
+
+function validateEmail(email)
+{
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+}
+
+function validateMessage(message)
+{
+  return message.length > 0;
+}
+
+function AboutPage() {
+
+  const [validated, setValidated] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    let passed = true;
+    
+    if (!validateName(name) || !validateEmail(email) || !validateMessage(message)) passed = false;
+
+    if (!passed) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+    //setValidated(false);
+  }
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  }
+  
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
+
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
+  }
+
+  return (
+    <>
+      <Navigation />
+      <Container fluid className='anim background p-5' style={style}>
+        <Row>
+          <Col>
+            <h1>O stránce</h1>
+            <p>Fanouškovská stránka knihy "Prašina" od Vojtěcha Matochy tvořená v rámci školního projektu.</p>
+            <div>Jan Koubek 2025</div>
+            <div>Email: <a href='mailto:koubek@spsejecna.cz'>koubek@spsejecna.cz</a></div>
+            <div>Telefon: +420 773 033 843</div>
+
+            <h2 className='mt-5'>Zdroje</h2>
+            <h3>Obrázky</h3>
+            <p>Ilustrace knihy Karla Osohy</p>
+            <h3>Zvuky</h3>
+            <div>Ambience: <a href='https://www.youtube.com/watch?v=RVlHfWimIfk'>https://www.youtube.com/watch?v=RVlHfWimIfk</a></div>
+            <div>Přechod mezi stránkami: <a href='https://www.youtube.com/watch?v=kJwRJ7--wLk'>https://www.youtube.com/watch?v=kJwRJ7--wLk</a></div>
+          </Col>
+          <Col>
+            <h1>Odezva</h1>
+            <p>Rád bych Vás požádal o zaslání Vašeho názoru na tuto webovou stránku! Uvítám jakoukoli odezvu!</p>
+            <Form noValidate onSubmit={handleSubmit} data-bs-theme="dark">
+              <Form.Group className='mb-3' controlId='formName'>
+                <Form.Label>Jméno a příjmení</Form.Label>
+                <Form.Control isValid={validated && validateName(name)} isInvalid={validated && !validateName(name)} name='name' type='text' placeholder='Jan Novák' onChange={handleNameChange} required></Form.Control>
+                <Form.Control.Feedback type='invalid'>Zadejte jméno a příjmení!</Form.Control.Feedback>
+                <Form.Text className='text-muted'>Vaše informace nejsou pro ostatní uživatele nijak viditelné.</Form.Text>
+              </Form.Group>
+              <Form.Group className='mb-3' controlId='formEmail'>
+                <Form.Label>Email</Form.Label>
+                <Form.Control isValid={validated && validateEmail(email)} isInvalid={validated && !validateEmail(email)} name='email' type='email' placeholder='priklad@priklad.cz' required></Form.Control>
+                <Form.Control.Feedback type='invalid'>Zadejte správný email!</Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group className='mb-3' controlId='formMessage'>
+                <Form.Label>Zpráva</Form.Label>
+                <Form.Control isValid={validated && validateMessage(message)} isInvalid={validated && !validateMessage(message)} name='message' type='text' placeholder='Líbí/Nelíbí se mi...' required></Form.Control>
+              </Form.Group>
+              <Button variant='secondary' type='submit'>Odeslat</Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  )
+}
+
+export default AboutPage;
