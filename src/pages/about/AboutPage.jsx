@@ -25,7 +25,7 @@ function validateEmail(email)
 
 function validateMessage(message)
 {
-  return message.length > 0;
+  return typeof(message) === "string" && message.length > 0;
 }
 
 function AboutPage() {
@@ -93,12 +93,13 @@ function AboutPage() {
               </Form.Group>
               <Form.Group className='mb-3' controlId='formEmail'>
                 <Form.Label>Email</Form.Label>
-                <Form.Control isValid={validated && validateEmail(email)} isInvalid={validated && !validateEmail(email)} name='email' type='email' placeholder='priklad@priklad.cz' required></Form.Control>
+                <Form.Control isValid={validated && validateEmail(email)} isInvalid={validated && !validateEmail(email)} name='email' type='email' placeholder='priklad@priklad.cz' onChange={handleEmailChange} required></Form.Control>
                 <Form.Control.Feedback type='invalid'>Zadejte správný email!</Form.Control.Feedback>
               </Form.Group>
               <Form.Group className='mb-3' controlId='formMessage'>
                 <Form.Label>Zpráva</Form.Label>
-                <Form.Control isValid={validated && validateMessage(message)} isInvalid={validated && !validateMessage(message)} name='message' type='text' placeholder='Líbí/Nelíbí se mi...' required></Form.Control>
+                <Form.Control isValid={validated && validateMessage(message)} isInvalid={validated && !validateMessage(message)} name='message' type='text' placeholder='Líbí/Nelíbí se mi...' onChange={handleMessageChange} required></Form.Control>
+                <Form.Control.Feedback type='invalid'>Zadejte zprávu!</Form.Control.Feedback>
               </Form.Group>
               <Button variant='secondary' type='submit'>Odeslat</Button>
             </Form>
