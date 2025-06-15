@@ -5,6 +5,9 @@ import ubejt from 'assets/ubejt.jpg'
 import jirka from 'assets/jirka.jpg'
 import en from 'assets/en.jpg'
 import tonda from 'assets/tonda.jpg'
+
+import bg from 'assets/town.jpg'
+
 import { Col, Container, Row } from 'react-bootstrap';
 
 function CharactersPage() {
@@ -14,10 +17,14 @@ function CharactersPage() {
   const char2 = { name: "En", brief: "Tondova sestřenice", extra: "Jakožto nejchytřejší člen skupiny, Anastázie (En) dokáže vymyslet řešení k jakémukoli problému. Pokud však jde o rychlé, krizové situace, rychle znervózní.", img: en }
   const char3 = { name: "Tonda", brief: "Jirkův nejlepší kamarád", extra: "Jirkův dlouholetý nejlepší kamarád, kterého Jirka odstrčí dál poté, co poznal jeho sestřenici En.", img: tonda }
 
+  const style = {
+    backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")"
+  }
+
   return (
     <>
       <Navigation></Navigation>
-      <Container className='anim'>
+      <Container fluid className='anim background' style={style}>
         <Row>
           <Col>
             <Character character={char1}></Character>

@@ -17,6 +17,8 @@ function TheaterPage() {
           <Col>
             <h1>Divadelní zpracování</h1>
             <p>10. prosince 2022 mělo premiéru první divadelní zpracování Prašiny v Klicperově divadle.</p>
+            <p>Celé představení režíruje Pavel Khek, kterému se perfektně povedlo vystihnout atmosféru Prašiny v nové, živější a osobnější formě.</p>
+            <p>Postavy jsou perfektně zahrány zapálenými herci, kteří dávají divákovy zcela nový pohled na postavy, které připomínají knižní postavy, ale zároveň působí unikátně.</p>
             <p>Více informací naleznete na stránkách Klicperova divadla.</p>
             <a href='https://www.klicperovodivadlo.cz/inscenace/prasina-1-8478/'>Klicperovo Divadlo</a>
           </Col>
