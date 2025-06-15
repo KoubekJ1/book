@@ -69,7 +69,7 @@ function AboutPage() {
         <Row>
           <Col>
             <h1>O stránce</h1>
-            <p>Fanouškovská stránka knihy "Prašina" od Vojtěcha Matochy tvořená v rámci školního projektu.</p>
+            <p>Fanouškovská webová stránka věnována knize "Prašina" od Vojtěcha Matochy. Stránka byla vytvořená v rámci školního projektu.</p>
             <div>Jan Koubek 2025</div>
             <div>Email: <a href='mailto:koubek@spsejecna.cz'>koubek@spsejecna.cz</a></div>
             <div>Telefon: +420 773 033 843</div>
@@ -83,11 +83,11 @@ function AboutPage() {
           </Col>
           <Col>
             <h1>Odezva</h1>
-            <p>Rád bych Vás požádal o zaslání Vašeho názoru na tuto webovou stránku! Uvítám jakoukoli odezvu!</p>
+            <p>Rád bych Vás požádal o zpětnou vazbu na Váš dojem z webové stránky. Uvítám jakoukoli konstruktivní kritiku i názor.</p>
             <Form noValidate onSubmit={handleSubmit} data-bs-theme="dark">
               <Form.Group className='mb-3' controlId='formName'>
                 <Form.Label>Jméno a příjmení</Form.Label>
-                <Form.Control isValid={validated && validateName(name)} isInvalid={validated && !validateName(name)} name='name' type='text' placeholder='Jan Novák' onChange={handleNameChange} required></Form.Control>
+                <Form.Control isValid={validated && validateName(name)} isInvalid={validated && !validateName(name)} name='name' type='text' placeholder='Ladislav Novák' onChange={handleNameChange} required></Form.Control>
                 <Form.Control.Feedback type='invalid'>Zadejte jméno a příjmení!</Form.Control.Feedback>
                 <Form.Text className='text-muted'>Vaše informace nejsou pro ostatní uživatele nijak viditelné.</Form.Text>
               </Form.Group>

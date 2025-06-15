@@ -34,6 +34,7 @@ function Navigation() {
               <Link to="/setting" className='nav-link'>Prašina</Link>
               <Link to="/story" className='nav-link'>Děj</Link>
               <Link to="/characters" className='nav-link'>Postavy</Link>
+              <Link to="/opinion" className='nav-link'>Názor</Link>
               <Link to="/theater" className='nav-link'>Divadlo</Link>
               <Link to="/about" className='nav-link'>O stránce</Link>
             </Nav>

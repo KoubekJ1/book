@@ -13,9 +13,9 @@ import { Col, Container, Row } from 'react-bootstrap';
 function CharactersPage() {
   //const char1 = {name: "ubejt", brief: "Kamarád", extra: "Dobrák od kosti", img: ubejt}; //pomiň
 
-  const char1 = { name: "Jirka Klimeš", brief: "Vyprávěč, hlavní postava", extra: "Jirka je nerozhodný, ale zároveň nejstatečnější člen skupiny. Vždy uvítá práci v týmu, zejména s En.", img: jirka }
+  const char1 = { name: "Jirka", brief: "Vyprávěč, hlavní postava", extra: "Jirka Klimeš je nerozhodný, ale zároveň nejstatečnější člen skupiny. Vždy uvítá práci v týmu, zejména s En.", img: jirka }
   const char2 = { name: "En", brief: "Tondova sestřenice", extra: "Jakožto nejchytřejší člen skupiny, Anastázie (En) dokáže vymyslet řešení k jakémukoli problému. Pokud však jde o rychlé, krizové situace, rychle znervózní.", img: en }
-  const char3 = { name: "Tonda", brief: "Jirkův nejlepší kamarád", extra: "Jirkův dlouholetý nejlepší kamarád, kterého Jirka odstrčí dál poté, co poznal jeho sestřenici En.", img: tonda }
+  const char3 = { name: "Tonda", brief: "Jirkův nejlepší kamarád", extra: "Jirkův dlouholetý nejlepší kamarád. Jirkou byl odstrčen poté, co poznal jeho sestřenici En, což ho nesmírně ranilo.", img: tonda }
 
   const style = {
     backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")"
