@@ -42,7 +42,6 @@ function HomePage(props) {
 
   const titleScreenRef = useRef(null);
   const [passed, setPassed] = useState(!props.showTitle);
-  console.log(passed);
   const [params, setParams] = useSearchParams();
 
   /*const titleElement = !passedBool ? <div ref={titleScreenRef} className='overlay text-center background-long' style={titleStyle}>

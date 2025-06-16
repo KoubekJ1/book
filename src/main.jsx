@@ -14,7 +14,6 @@ import TheaterPage from './pages/theater/TheaterPage';
 import ambianceSound from 'assets/audio/ambiance.opus';
 import AboutPage from './pages/about/AboutPage';
 import OpinionPage from './pages/opinion/OpinionPage';
-import ReactAudioPlayer from 'react-audio-player';
 
 const router = createBrowserRouter([
   {
@@ -60,7 +59,7 @@ const router = createBrowserRouter([
 ])
 
 function playAudio(ref) {
-  ref.current.audioEl.current.play();
+  ref.current.play();
 }
 
 function DisplayComponent() {
@@ -82,7 +81,7 @@ function DisplayComponent() {
 
   return (
     <>
-      <ReactAudioPlayer ref={audioRef} src={ambianceSound} />
+      <audio ref={audioRef} src={ambianceSound}></audio>
       <RouterProvider router={router}></RouterProvider>
     </>
   )
