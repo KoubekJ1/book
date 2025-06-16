@@ -10,11 +10,10 @@ import story from 'assets/story.jpg'
 import friends from 'assets/friends.jpg'
 import { Col, Container, Row, Button } from 'react-bootstrap'
 import TitleArticle from 'src/components/titlearticle/TitleArticle'
-import { Link } from 'react-router-dom'
-import { SiteContext } from 'src/SiteContext'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useRef, useState } from 'react'
 
-function HomePage() {
+function HomePage(props) {
   const content1 = 'Prašina je dobrodružná kniha pro děti a mládež od českého spisovatele Vojtěcha Matochy. Příběh otevírá záhady tajuplného, tichého a nebezpečného místa uprostřed Prahy – Prašiny, kde z neznámých důvodů nefunguje elektřina. Ilustroval ji Karel Osoha.';
   const content2 = 'Prašina je místo, kde z neznámých důvodů nefunguje elektřina, mobily zhasínají a svět jako by přestal existovat. Úzké uličky, opuštěné domy a podivné ticho vytvářejí dusivou atmosféru, která člověka pohltí. Prašina je tajuplná, nebezpečná a jakoby odříznutá od času – místo, kam se odváží jen ti nejodhodlanější.';
   const content3 = 'Když do prašiny jednoho dne vkročí Jirka Klimeš, začíná závod s časem, plný nečekaných zvratů, temných tajemství a neviditelného nebezpečí. Odhalte, co se v Prašině opravdu skrývá… Pokud se odvážíte.';
@@ -37,13 +36,14 @@ function HomePage() {
     element.classList.add('away');
     setTimeout(() => {
       element.classList.add('hidden');
-      SiteContext.entered = true;
       setPassed(true);
     }, 500);
   }
 
   const titleScreenRef = useRef(null);
-  const [passed, setPassed] = useState(SiteContext.entered);
+  const [passed, setPassed] = useState(!props.showTitle);
+  console.log(passed);
+  const [params, setParams] = useSearchParams();
 
   /*const titleElement = !passedBool ? <div ref={titleScreenRef} className='overlay text-center background-long' style={titleStyle}>
     <div className='overlay-content'>

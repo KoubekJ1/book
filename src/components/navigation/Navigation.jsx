@@ -31,7 +31,7 @@ function Navigation(props) {
           <Navbar.Toggle aria-controls="navbar"></Navbar.Toggle>
           <Navbar.Collapse id="navbar">
             <Nav className="me-auto">
-              <Link to="/" className='nav-link'>Domov</Link>
+              <Link to="/home" className='nav-link'>Domov</Link>
               <Link to="/setting" className='nav-link'>Prašina</Link>
               <Link to="/story" className='nav-link'>Děj</Link>
               <Link to="/characters" className='nav-link'>Postavy</Link>

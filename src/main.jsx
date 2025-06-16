@@ -16,12 +16,15 @@ import AboutPage from './pages/about/AboutPage';
 import OpinionPage from './pages/opinion/OpinionPage';
 import ReactAudioPlayer from 'react-audio-player';
 
-import { SiteContext } from './SiteContext';
-
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
+    element: <HomePage showTitle={true} />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: '/home',
+    element: <HomePage showTitle={false} />,
     errorElement: <ErrorPage />
   },
   {
@@ -56,8 +59,7 @@ const router = createBrowserRouter([
   }
 ])
 
-function playAudio(ref)
-{
+function playAudio(ref) {
   ref.current.audioEl.current.play();
 }
 
@@ -79,10 +81,10 @@ function DisplayComponent() {
   }, 500)*/
 
   return (
-    <SiteContext.Provider value={{entered: false}}>
+    <>
       <ReactAudioPlayer ref={audioRef} src={ambianceSound} />
       <RouterProvider router={router}></RouterProvider>
-    </SiteContext.Provider>
+    </>
   )
 }
 
