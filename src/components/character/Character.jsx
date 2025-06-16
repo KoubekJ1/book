@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 function Character(props) {
   const [show, setShow] = useState(false);
-  const enable = () => setShow(true);
   const disable = () => setShow(false);
 
   return (
@@ -16,7 +15,7 @@ function Character(props) {
         <p className='text-center card-text'>{props.character.brief}</p>
       </div>
 
-      <Modal show={show} data-bs-theme="dark">
+      <Modal show={show} onHide={disable} data-bs-theme="dark">
         <Modal.Header closeButton>
           <Modal.Title>{props.character.name}</Modal.Title>
         </Modal.Header>
