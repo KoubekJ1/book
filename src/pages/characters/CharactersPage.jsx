@@ -24,7 +24,7 @@ function CharactersPage() {
   return (
     <>
       <Navigation></Navigation>
-      <Container fluid className='anim background-long character-container' style={style}>
+      <Container fluid className='anim background-long' style={style}>
         <Row>
           <Col className='char-col'>
             <Character character={char1}></Character>

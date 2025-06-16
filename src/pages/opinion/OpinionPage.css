@@ -1,0 +1,14 @@
+.opinion-container {
+  padding: 3em;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .opinion-div {
+    width: 80vw;
+    padding-left: 0;
+    padding-right: 0;
+    /*margin-left: 10vw;
+    margin-right: 10vw;*/
+  }
+}

@@ -12,7 +12,7 @@ function TheaterPage() {
   return (
     <>
       <Navigation />
-      <Container fluid className='anim p-5 background' style={style}>
+      <Container fluid className='anim p-5 background-long theater-bg' style={style}>
         <Row>
           <Col>
             <h1>Divadelní zpracování</h1>
@@ -23,7 +23,7 @@ function TheaterPage() {
             <a href='https://www.klicperovodivadlo.cz/inscenace/prasina-1-8478/'>Klicperovo Divadlo</a>
           </Col>
           <Col>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kRFOvGoB0js?si=qn7kaoo5ncEahZ79" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            <iframe className='mt-5' width={window.innerWidth * (window.innerWidth > 1000 ? 0.4 : 0.8)} height={window.innerHeight * 0.4} src="https://www.youtube.com/embed/kRFOvGoB0js?si=qn7kaoo5ncEahZ79" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           </Col>
         </Row>
       </Container>
