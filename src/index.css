@@ -26,6 +26,11 @@
   animation-duration: 0.5s;
 }
 
+.anim-down {
+  animation: fade-in-down;
+  animation-duration: 0.5s;
+}
+
 @keyframes fade-in {
   from {
     transform: translate(0px, 100px);
@@ -34,6 +39,18 @@
 
   to {
     transform: translate(0px, 0px);
+    opacity: 1.0;
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    transform: translate(0px, 0px);
+    opacity: 0.0;
+  }
+
+  to {
+    transform: translate(0px, 100px);
     opacity: 1.0;
   }
 }

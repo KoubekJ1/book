@@ -93,7 +93,6 @@ function OpinionPage() {
               <Button variant='secondary' type='submit'>Odeslat</Button><br/>
               <Form.Text className='text-muted'>Odeslané názory jsou zcela anonymní</Form.Text>
             </Form>
-
           </Col>
         </Row>
       </Container>

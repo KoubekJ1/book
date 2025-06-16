@@ -10,17 +10,16 @@ import ambianceSound from 'assets/audio/ambiance.opus'
 
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
 
 
 
-function Navigation(props) {
-  if (props.hide) return;
+function Navigation() {
+  const ambiance = new Audio(ambianceSound);
+  ambiance.play();
+
   const transitionEffect = useEffect(() => {
-    return () =>
-    {
-      <ReactAudioPlayer src={transitionSound} autoPlay></ReactAudioPlayer>
-    }
+    const transition = new Audio(transitionSound);
+    transition.play();
   }, []);
 
   return (

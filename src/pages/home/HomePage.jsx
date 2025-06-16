@@ -11,6 +11,8 @@ import friends from 'assets/friends.jpg'
 import { Col, Container, Row, Button } from 'react-bootstrap'
 import TitleArticle from 'src/components/titlearticle/TitleArticle'
 import { Link } from 'react-router-dom'
+import { SiteContext } from 'src/SiteContext'
+import { useRef, useState } from 'react'
 
 function HomePage() {
   const content1 = 'Prašina je dobrodružná kniha pro děti a mládež od českého spisovatele Vojtěcha Matochy. Příběh otevírá záhady tajuplného, tichého a nebezpečného místa uprostřed Prahy – Prašiny, kde z neznámých důvodů nefunguje elektřina. Ilustroval ji Karel Osoha.';
@@ -21,14 +23,54 @@ function HomePage() {
   const link3 = <Link to="/story" className="nav-link linkbutton">Číst dále</Link>;
   const link4 = <Link to="/characters" className="nav-link linkbutton">Číst dále</Link>;
 
-const style = {
-  backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + alley + ")"
-}
+  const style = {
+    backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + alley + ")"
+  }
 
+  const titleStyle = {
+    backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + dark + ")"
+  }
+
+  const enterButtonPressed = () => {
+    //titleScreenRef.current.classList.add('hidden');
+    const element = titleScreenRef.current;
+    element.classList.add('away');
+    setTimeout(() => {
+      element.classList.add('hidden');
+      SiteContext.entered = true;
+      setPassed(true);
+    }, 500);
+  }
+
+  const titleScreenRef = useRef(null);
+  const [passed, setPassed] = useState(SiteContext.entered);
+
+  /*const titleElement = !passedBool ? <div ref={titleScreenRef} className='overlay text-center background-long' style={titleStyle}>
+    <div className='overlay-content'>
+      <h1>Prašina je místo, kam se jen tak někdo neodváží vstoupit.</h1>
+      <h2>Jste si jistí, že chcete pokračovat?</h2>
+      <Button variant='secondary' onClick={() => enterButtonPressed()}>Vstoupit</Button></div>
+  </div> : <></>;*/
+
+  let titleElement;
+  if (!passed) {
+    titleElement = <div ref={titleScreenRef} className='overlay text-center background-long' style={titleStyle}>
+      <div className='overlay-content'>
+        <h1>Prašina je místo, kam se jen tak někdo neodváží vstoupit.</h1>
+        <h2>Jste si jistí, že chcete pokračovat?</h2>
+        <Button variant='secondary' onClick={() => enterButtonPressed()}>Vstoupit</Button></div>
+    </div>
+  }
+  else
+  {
+    titleElement = <></>;
+  }
 
   return (
     <>
-      <Navigation></Navigation>
+      {passed ? <Navigation></Navigation> : <></>}
+      {titleElement}
+
       <div className='background-long anim' style={style}>
         <TitleArticle title='Prašina' sub='Vojtěch Matocha' content={content1} img={cover} subimg='Ilustrace od Karla Osohy' />
         <TitleArticle title='Prostředí' sub='Co je to prašina?' content={content2} img={alley} subimg='Opuštěná čtvrť' linkbutton={link2} />
