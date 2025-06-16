@@ -23,7 +23,7 @@ function TheaterPage() {
             <a href='https://www.klicperovodivadlo.cz/inscenace/prasina-1-8478/'>Klicperovo Divadlo</a>
           </Col>
           <Col>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kRFOvGoB0js?si=qn7kaoo5ncEahZ79" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kRFOvGoB0js?si=qn7kaoo5ncEahZ79" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           </Col>
         </Row>
       </Container>

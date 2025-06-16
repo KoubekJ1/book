@@ -1,6 +1,9 @@
-.scenic {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
+.setting-bg {
   height: 94vh;
+}
+
+@media only screen and (max-width: 550px) {
+  .setting-bg {
+    height: 100%;
+  }
 }

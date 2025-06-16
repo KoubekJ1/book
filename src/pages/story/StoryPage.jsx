@@ -15,7 +15,7 @@ function StoryPage() {
   return (
     <>
       <Navigation />
-      <div className='anim p-5 background-long' style={style}>
+      <div className='anim background-long' style={style}>
         <TitleArticle
           content='Kniha Prašina vypráví o trojici dětí – Jirkovi, Anastázii (En) a Tondovi.'
         />

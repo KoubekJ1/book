@@ -11,7 +11,7 @@ function SettingPage() {
   return (
     <>
       <Navigation></Navigation>
-      <div className='anim scenic p-5' style={style}>
+      <div className='anim setting-bg background-long p-5' style={style}>
         <h1>Prašina</h1>
         <h4>Nejzáhadnější místo v Praze</h4>
         <p>

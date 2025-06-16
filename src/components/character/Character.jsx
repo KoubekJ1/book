@@ -10,7 +10,7 @@ function Character(props) {
 
   return (
     <>
-      <div className='imgcontainer m-2 mt-5'>
+      <div className='imgcontainer'>
         <img src={props.character.img} className='imgcircle' onClick={setShow}></img>
         <h5 className='text-center card-title my-2'>{props.character.name}</h5>
         <p className='text-center card-text'>{props.character.brief}</p>

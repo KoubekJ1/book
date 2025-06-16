@@ -1,3 +1,30 @@
-@media only screen and (max-width: 700px) {
-  
+.title-article {
+  padding: 5em;
+  text-align: center;
+}
+
+
+
+.title-image {
+  width: 50%;
+  min-width: 300px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .title-article {
+    padding: 1em;
+    text-align: start;
+  }
+}
+
+@media only screen and (max-width: 310px) {
+  .title-image {
+    min-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .title-text {
+    min-width: 80vw;
+  }
 }
