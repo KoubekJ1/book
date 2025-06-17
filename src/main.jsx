@@ -1,4 +1,4 @@
-import { StrictMode, useEffect, useRef } from 'react'
+import { StrictMode, useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'lib/bootstrap/css/bootstrap.css';
@@ -15,6 +15,7 @@ import ambianceSound from 'assets/audio/ambiance.opus';
 import AboutPage from './pages/about/AboutPage';
 import OpinionPage from './pages/opinion/OpinionPage';
 import TestPage from './pages/test/TestPage';
+import { TestContext } from './pages/test/TestContext';
 
 const router = createBrowserRouter([
   {
@@ -59,8 +60,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/test',
-    element: <TestPage/>,
-    errorElement: <ErrorPage/>
+    element: <TestComponent />,
+    errorElement: <ErrorPage />
   }
 ])
 
@@ -90,6 +91,17 @@ function DisplayComponent() {
       <audio ref={audioRef} src={ambianceSound}></audio>
       <RouterProvider router={router}></RouterProvider>
     </>
+  )
+}
+
+function TestComponent() {
+  const [answers, setAnswers] = useState(new Array(10));
+  const [answerIndexes, setAnswerIndexes] = useState(new Array(10));
+
+  return (
+    <TestContext.Provider value={{ answers, setAnswers, answerIndexes, setAnswerIndexes }}>
+      <TestPage />
+    </TestContext.Provider>
   )
 }
 

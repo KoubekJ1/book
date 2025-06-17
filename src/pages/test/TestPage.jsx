@@ -2,35 +2,40 @@ import Navigation from 'src/components/navigation/Navigation';
 import './TestPage.css';
 
 import bg from 'assets/machine.png'
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Test1, Test2, Test3, Test4, Test5, Test6, Test7, Test8, Test9, Test10 } from 'src/components/test/Tests';
 import { Button } from 'react-bootstrap';
 import TestResult from 'src/components/testresult/TestResult';
+import { TestContext } from './TestContext';
+
+import jirka from 'assets/jirka.jpg'
 
 function TestPage() {
   const style = {
     backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")"
   }
 
+  const {answers, answerIndexes} = useContext(TestContext);
+
   const [page, setPage] = useState(0);
   const [testFinished, setTestFinished] = useState(false);
 
-  const pages = [<Test1 setVal={(ans) => {setAns(0, ans)}}/>, <Test2 setVal={(ans) => {setAns(1, ans)}} />, <Test3 setVal={(ans) => {setAns(2, ans)}} />, <Test4 setVal={(ans) => {setAns(3, ans)}} />, <Test5 setVal={(ans) => {setAns(4, ans)}} />, <Test6 setVal={(ans) => {setAns(5, ans)}} />, <Test7 setVal={(ans) => {setAns(6, ans)}} />, <Test8 setVal={(ans) => {setAns(7, ans)}} />, <Test9 setVal={(ans) => {setAns(8, ans)}} />, <Test10 setVal={(ans) => {setAns(9, ans)}} />];
-  const [answerObjects, setAnswerObjects] = useState(new Array(1));
+  /*useEffect(() => {
+    console.log(answerIndexes);
+  }, [answerIndexes])*/
 
-  const [nextButtonEnabled, setNextButtonEnabled] = useState(false);
-
-  const setAns = (ans, object) => {
-    answerObjects[ans] = object;
-    console.log(answerObjects);
-    console.log(answerObjects.length);
-    setNextButtonEnabled(true);
+  const calcPerson = () =>
+  {
+    return { name: "Jirka", brief: "Vyprávěč, hlavní postava", extra: "Jirka Klimeš je nerozhodný, ale zároveň nejstatečnější člen skupiny. Vždy uvítá práci v týmu, zejména s En.", img: jirka };
   }
 
-  const nextButton = <Button className='test-button' variant='secondary' disabled={!nextButtonEnabled} onClick={() => {setPage(page + 1); setNextButtonEnabled(false) }}>Další</Button>;
-  const previousButton = <Button className='test-button' variant='secondary' onClick={() => { setPage(page - 1); setNextButtonEnabled(true) }}>Předchozí</Button>;
+  const pages = [<Test1/>, <Test2/>, <Test3/>, <Test4/>, <Test5/>, <Test6/>, <Test7/>, <Test8/>, <Test9/>, <Test10/>];
+
+  const nextButton = <Button className='test-button' variant='secondary' disabled={answerIndexes[page] == undefined} onClick={() => { setPage(page + 1); }}>Další</Button>;
+  const previousButton = <Button className='test-button' variant='secondary' onClick={() => { setPage(page - 1); }}>Předchozí</Button>;
   const submitButton = <Button className='test-button' variant='secondary' onClick={() => { setTestFinished(true) }}>Hotovo</Button>;
 
+  let y = 0;
   return (
     <>
       <Navigation />
@@ -39,7 +44,7 @@ function TestPage() {
         <h4>Která z hlavních postav je Vám nejpodobnější?</h4>
         <p>Tento test otestuje Vaše dovednosti v situacích, do kterých byste se mohli v Prašině dostat.</p>
         <p>Před odpovězením si Vaši odpověď vždy dobře rozmyslete.</p>
-        {testFinished ? <TestResult /> :
+        {testFinished ? <TestResult answers={answers}/> :
           <>
             <h4 className='mt-5'>Otázka {page + 1}</h4>
             {pages[page]}
