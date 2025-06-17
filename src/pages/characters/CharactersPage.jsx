@@ -1,7 +1,6 @@
 import Navigation from 'src/components/navigation/Navigation';
 import './CharactersPage.css'
 import Character from 'src/components/character/Character';
-import ubejt from 'assets/ubejt.jpg'
 import jirka from 'assets/jirka.jpg'
 import en from 'assets/en.jpg'
 import tonda from 'assets/tonda.jpg'
