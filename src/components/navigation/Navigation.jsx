@@ -30,6 +30,7 @@ function Navigation(props) {
               <Link to="/story" className='nav-link'>Příběh</Link>
               <Link to="/characters" className='nav-link'>Postavy</Link>
               <Link to="/opinion" className='nav-link'>Názor</Link>
+              <Link to="/test" className='nav-link'>Test osobnosti</Link>
               <Link to="/theater" className='nav-link'>Divadlo</Link>
               <Link to="/about" className='nav-link'>O stránce</Link>
             </Nav>

@@ -14,6 +14,7 @@ import TheaterPage from './pages/theater/TheaterPage';
 import ambianceSound from 'assets/audio/ambiance.opus';
 import AboutPage from './pages/about/AboutPage';
 import OpinionPage from './pages/opinion/OpinionPage';
+import TestPage from './pages/test/TestPage';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
     path: '/opinion',
     element: <OpinionPage />,
     errorElement: <ErrorPage />
+  },
+  {
+    path: '/test',
+    element: <TestPage/>,
+    errorElement: <ErrorPage/>
   }
 ])
 
