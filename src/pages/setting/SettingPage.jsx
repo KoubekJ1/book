@@ -12,7 +12,7 @@ function SettingPage() {
     <>
       <Navigation></Navigation>
       <div className='anim setting-bg background-long p-5' style={style}>
-        <h1>Prašina</h1>
+        <h1>Co je to Prašina?</h1>
         <h4>Nejzáhadnější místo v Praze</h4>
         <p>
           Prašina je podivná čtvrť uprostřed zářící Prahy, rozprostírající se kdesi mezi Václavským náměstím a čtvrtí Vinohrady, ohraničena je Karlovým náměstím a Národním muzeem. Rozkládá se na dvou pahorcích: Šibeničním vrchu a Krchlebech. Ve čtvrti se nachází knihovna, ve které se nachází přes 50 tisíc knih. Zastoupeny jsou převážně české, částečně pak německé, anglické, francouzské a ruské. Většina knih je však ve špatném stavu. Další významnou stavbou je divadlo postavené v klasicistním stylu; budova má bohatě zdobené interiéry, nachází se zde také řada soch a bust. Na úpatí Šibeničního vrchu stojí také nemocnice, ve čtvrti jsou 2 kostely.

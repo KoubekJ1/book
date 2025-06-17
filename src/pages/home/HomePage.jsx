@@ -15,12 +15,18 @@ import { useRef, useState } from 'react'
 
 function HomePage(props) {
   const content1 = 'Prašina je dobrodružná kniha pro děti a mládež od českého spisovatele Vojtěcha Matochy. Příběh otevírá záhady tajuplného, tichého a nebezpečného místa uprostřed Prahy – Prašiny, kde z neznámých důvodů nefunguje elektřina. Ilustroval ji Karel Osoha.';
+  const contentAuthor = 'Kniha byla vydána roku 2018 nakladatelstvým Paseka a má dvě pokračování. Celá kniha má 260 stran. Za knihu získal Vojtěch Matocha cenu nočních spáčů Noci s Andersenem a byl nominován na Magnesii Literu, Cenu Jiřího Ortena a Zlatou stuhu.';
   const content2 = 'Prašina je místo, kde z neznámých důvodů nefunguje elektřina, mobily zhasínají a svět jako by přestal existovat. Úzké uličky, opuštěné domy a podivné ticho vytvářejí dusivou atmosféru, která člověka pohltí. Prašina je tajuplná, nebezpečná a jakoby odříznutá od času – místo, kam se odváží jen ti nejodhodlanější.';
   const content3 = 'Když do prašiny jednoho dne vkročí Jirka Klimeš, začíná závod s časem, plný nečekaných zvratů, temných tajemství a neviditelného nebezpečí. Odhalte, co se v Prašině opravdu skrývá… Pokud se odvážíte.';
   const content4 = 'Poznejte nerozlučnou trojici kamarádů, která se odváží vstoupit tam, kde se jiní bojí jen přiblížit. Jirka, En a Tonda – každý úplně jiný, ale společně tvoří tým, který dokáže čelit tajemstvím Prašiny i nebezpečím, která se skrývají ve tmě. Chcete vědět, co je spojuje a co všechno spolu zažili? Ponořte se do jejich příběhu a objevte sílu přátelství v neobyčejném světě bez elektřiny.';
   const link2 = <Link to="/setting" className="nav-link linkbutton text-center">Číst dále</Link>;
   const link3 = <Link to="/story" className="nav-link linkbutton text-center">Číst dále</Link>;
   const link4 = <Link to="/characters" className="nav-link linkbutton text-center">Číst dále</Link>;
+
+  const subTitle = <>
+    <p>{contentAuthor}</p>
+    <a className='btn btn-secondary' href='https://www.paseka.cz/produkt/prasina-1-2-vydani/'>Koupit</a>
+  </>
 
   const style = {
     backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + alley + ")"
@@ -71,7 +77,7 @@ function HomePage(props) {
       {titleElement}
 
       <div className='background-long anim' style={style}>
-        <TitleArticle title='Prašina' sub='Vojtěch Matocha' content={content1} img={cover} subimg='Ilustrace od Karla Osohy' />
+        <TitleArticle title='Prašina' sub='Vojtěch Matocha' content={content1} img={cover} subimg='Ilustrace od Karla Osohy' linkbutton={subTitle}/>
         <TitleArticle title='Prostředí' sub='Co je to prašina?' content={content2} img={alley} subimg='Opuštěná čtvrť' linkbutton={link2} />
         <TitleArticle title='Děj' sub='Napínavý příběh' content={content3} img={story} subimg='Nebezpečná cesta' linkbutton={link3} />
         <TitleArticle title='Postavy' sub='Nerozdělitelná trojice' content={content4} img={friends} subimg='Přátelé' linkbutton={link4} />

@@ -27,4 +27,8 @@
   .title-text {
     min-width: 80vw;
   }
+
+  .title-image {
+    margin-top: 3em;
+  }
 }

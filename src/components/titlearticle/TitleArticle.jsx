@@ -23,7 +23,7 @@ function TitleArticle(props) {
           <Col>
             <Container fluid>
               <Row>
-                <img src={props.img} className='title-image mx-auto mt-5 d-block'></img>
+                <img src={props.img} className='title-image mx-auto d-block'></img>
               </Row>
               <Row>
                 <h4 className='mt-1 text-center'>{props.subimg}</h4>

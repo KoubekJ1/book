@@ -44,7 +44,7 @@ function OpinionPage() {
         <Row>
           <Col>
             <div className='opinion-div'>
-              <h1>Hodnocení knihy</h1>
+              <h1>Vlastní hodnocení</h1>
               <p>Kniha Prašina od autora Vojtěcha Matochy představuje neobyčejný literární zážitek, který překračuje hranice běžné dětské či dobrodružné literatury. Jde o napínavý román, jenž si získal srdce čtenářů všech věkových kategorií svou originální zápletkou, důmyslnou atmosférou a silně vykreslenými postavami.</p>
 
               <p>Příběh sleduje trojici dětí – Jirku, jeho kamarádku En a jejího mladšího bratrance Tondu – kteří se zcela nečekaně ocitnou uprostřed záhady, jež přesahuje běžné dětské starosti. Děj se odehrává v tajemné pražské čtvrti zvané Prašina – místě, kde nefunguje žádná moderní technologie, neexistuje elektřina a celé území jakoby vypadlo z času. Zároveň jde o prostor, který si zachovává svou vlastní identitu, magickou přitažlivost i skrytou hrozbu.</p>
@@ -89,6 +89,7 @@ function OpinionPage() {
                   <p>Václav Novotný a Klement Hrouda představují střet dvou epoch – minulosti a budoucnosti, hodnot a výhod, ticha a hluku, tmy a světla. Jeden chrání stabilitu a tajemství, druhý boří vše, aby mohl stavět nové.
                     Mezi nimi stojí děti – Jirka, En a Tonda – a s nimi i čtenář, který se musí rozhodnout, čí cestu považuje za správnou.</p>
                   <Form.Label>A vy? Stojíte spíš na straně Václava Novotného a tradice, nebo Klementa Hroudy a modernizace?</Form.Label>
+                  <br/>
                   <Form.Check inline className='text-start' name='char' id='vn' type='radio' label={"Václav Novotný"} required></Form.Check>
                   <Form.Check inline className='text-start' name='char' id='kh' type='radio' label={"Klement Hrouda"} required></Form.Check>
                 </Form.Group>
