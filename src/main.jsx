@@ -69,6 +69,8 @@ function playAudio(ref) {
   ref.current.play();
 }
 
+
+
 function DisplayComponent() {
   const audioRef = useRef(null);
   const clickCallback = () => {
@@ -85,11 +87,15 @@ function DisplayComponent() {
   /*setTimeout(() => {
     //audioRef.current.audioEl.current.play();
   }, 500)*/
-
+  const setVolume = (volume) => {
+    audioRef.current.volume = volume;
+  }
   return (
     <>
       <audio ref={audioRef} src={ambianceSound}></audio>
-      <RouterProvider router={router}></RouterProvider>
+      <AudioContext value={{ setVolumeCallback: setVolume, volume: 0.5 }}>
+        <RouterProvider router={router}></RouterProvider>
+      </AudioContext>
     </>
   )
 }

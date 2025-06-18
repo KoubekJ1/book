@@ -1,0 +1,38 @@
+.vol-margin {
+  margin-left: 5vw;
+}
+
+.vol-icon-margin {
+  margin-left: 5vw;
+}
+
+.slider {
+  color: black;
+  width: 50%;
+}
+
+.vol-icon {
+  width: 7%;
+}
+
+.top-link {
+  /*min-width: 118px;*/
+  /*max-height: 40px;*/
+  white-space: nowrap;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+  .vol-margin {
+    margin-left: 0;
+  }
+
+  .vol-icon-margin {
+    margin-top: 1em;
+    margin-left: 0;
+  }
+  .slider {
+    width: 100%;
+  }
+}

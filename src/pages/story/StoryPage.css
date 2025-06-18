@@ -1,5 +1,6 @@
 .h-story {
-  padding: 3em;
+  padding-top: 1em;
+  padding-left: 1em;
 }
 
 @media only screen and (max-width: 650px) {

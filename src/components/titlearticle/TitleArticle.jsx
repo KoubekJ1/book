@@ -4,7 +4,7 @@ import './TitleArticle.css';
 function TitleArticle(props) {
   return (
     <>
-      <Container fluid className='title-article'>
+      <Container fluid className={!props.small ? 'title-article' : 'title-article-small'}>
         <Row>
           <Col>
             <Container fluid className='title-text'>
@@ -23,7 +23,7 @@ function TitleArticle(props) {
           <Col>
             <Container fluid>
               <Row>
-                <img src={props.img} className='title-image mx-auto d-block'></img>
+                <img src={props.img} className={!props.small ? 'title-image mx-auto d-block' : 'title-image-small mx-auto d-block'}></img>
               </Row>
               <Row>
                 <h4 className='mt-1 text-center'>{props.subimg}</h4>

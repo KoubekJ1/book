@@ -3,10 +3,18 @@
   text-align: center;
 }
 
-
+.title-article-small {
+  padding-left: 1em;
+  text-align: start;
+}
 
 .title-image {
   width: 50%;
+  min-width: 300px;
+}
+
+.title-image-small {
+  width: 20%;
   min-width: 300px;
 }
 
@@ -15,10 +23,19 @@
     padding: 1em;
     text-align: start;
   }
+
+  .title-article-small {
+    padding: 1em;
+    text-align: start;
+  }
 }
 
 @media only screen and (max-width: 310px) {
   .title-image {
+    min-width: 200px;
+  }
+
+  .title-image-small {
     min-width: 200px;
   }
 }
