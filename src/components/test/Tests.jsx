@@ -3,8 +3,6 @@ import { Form } from "react-bootstrap";
 import { TestContext } from "src/pages/test/TestContext";
 
 function setObject(object, questionIndex, answerIndex, context) {
-  console.log(object);
-  console.log(context.answers);
   context.setAnswers(old => ({...old, [questionIndex]: object}));
   context.setAnswerIndexes(old => ({...old, [questionIndex]: answerIndex}));
 }

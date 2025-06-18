@@ -74,7 +74,8 @@ function AboutPage() {
 
               <h2 className='mt-5'>Zdroje</h2>
               <h3>Obrázky</h3>
-              <p>Ilustrace knihy Karla Osohy</p>
+              <div>Ilustrace knihy Karla Osohy</div>
+              <div>Divadlo: <a href='https://www.klicperovodivadlo.cz/inscenace/prasina-1-8478/'>Klicperovo divadlo</a></div>
               <h3>Zvuky</h3>
               <div>Ambience: <a href='https://www.youtube.com/watch?v=RVlHfWimIfk'>https://www.youtube.com/watch?v=RVlHfWimIfk</a></div>
               <div>Přechod mezi stránkami: <a href='https://www.youtube.com/watch?v=kJwRJ7--wLk'>https://www.youtube.com/watch?v=kJwRJ7--wLk</a></div>
