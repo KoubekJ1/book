@@ -3,7 +3,7 @@ import './TestPage.css';
 
 import bg from 'assets/machine.png'
 import { useContext, useEffect, useState } from 'react';
-import { Test1, Test2, Test3, Test4, Test5, Test6, Test7, Test8, Test9, Test10 } from 'src/components/test/Tests';
+import { Test1, Test2, Test3, Test4, Test5, Test6, Test7, Test8, Test9, Test10, Test11 } from 'src/components/test/Tests';
 import { Button } from 'react-bootstrap';
 import TestResult from 'src/components/testresult/TestResult';
 import { TestContext } from './TestContext';
@@ -32,7 +32,7 @@ function TestPage() {
     return { name: "Jirka", brief: "Vyprávěč, hlavní postava", extra: "Jirka Klimeš je nerozhodný, ale zároveň nejstatečnější člen skupiny. Vždy uvítá práci v týmu, zejména s En.", img: jirka };
   }
 
-  const pages = [<Test1 />, <Test2 />, <Test3 />, <Test4 />, <Test5 />, <Test6 />, <Test7 />, <Test8 />, <Test9 />, <Test10 />];
+  const pages = [<Test1 />, <Test2 />, <Test3 />, <Test4 />, <Test5 />, <Test6 />, <Test7 />, <Test8 />, <Test9 />, <Test10 />, <Test11/>];
 
   const nextButton = <Button className='test-button' variant='secondary' disabled={answerIndexes[page] == undefined} onClick={() => { setPage(page + 1); }}>Další</Button>;
   const previousButton = <Button className='test-button' variant='secondary' onClick={() => { setPage(page - 1); }}>Předchozí</Button>;

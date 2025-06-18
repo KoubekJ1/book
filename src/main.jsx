@@ -16,6 +16,7 @@ import AboutPage from './pages/about/AboutPage';
 import OpinionPage from './pages/opinion/OpinionPage';
 import TestPage from './pages/test/TestPage';
 import { TestContext } from './pages/test/TestContext';
+import Buy from './pages/buy/Buy';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,11 @@ const router = createBrowserRouter([
     path: '/test',
     element: <TestComponent />,
     errorElement: <ErrorPage />
+  },
+  {
+    path: '/buy',
+    element: <Buy/>,
+    errorElement: <ErrorPage/>
   }
 ])
 
@@ -101,8 +107,12 @@ function DisplayComponent() {
 }
 
 function TestComponent() {
-  const [answers, setAnswers] = useState(new Array(10));
-  const [answerIndexes, setAnswerIndexes] = useState(new Array(10));
+  const [answers, setAnswers] = useState(new Array(11));
+  const [answerIndexes, setAnswerIndexes] = useState(new Array(11));
+  
+  useEffect(() => {
+    answerIndexes[10] = [];
+  }, [])
 
   return (
     <TestContext.Provider value={{ answers, setAnswers, answerIndexes, setAnswerIndexes }}>

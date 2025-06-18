@@ -65,7 +65,7 @@ function AboutPage() {
       <Container fluid className='anim background-long' style={style}>
         <Row>
           <Col>
-            <div className='about-col'>
+            <div className='about-div'>
               <h1>O stránce</h1>
               <p>Fanouškovská webová stránka věnována knize "Prašina" od Vojtěcha Matochy. Stránka byla vytvořená v rámci školního projektu.</p>
               <div>Jan Koubek 2025</div>
@@ -82,7 +82,7 @@ function AboutPage() {
             </div>
           </Col>
           <Col>
-            <div className='about-col mt-5'>
+            <div className='about-div'>
               <h1>Odezva</h1>
               <p>Rád bych Vás požádal o zpětnou vazbu na Váš dojem z webové stránky. Uvítám jakoukoli konstruktivní kritiku i názor.</p>
               <Form noValidate onSubmit={handleSubmit} data-bs-theme="dark">

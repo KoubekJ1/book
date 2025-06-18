@@ -4,12 +4,13 @@
 
 @media only screen and (max-width: 1000px) {
   .about-div {
+    padding: 1em;
     width: calc(100vw - 1em);
     /*text-align: center;*/
   }
 
   .send-button {
-    width: calc(100vw - 1.4em);
+    width: calc(100vw - 3em);
     height: 5em;
   }
 }

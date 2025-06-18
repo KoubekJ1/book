@@ -1,0 +1,14 @@
+.buy-card {
+  width: 18em;
+  height: 12em;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.buy-card-best {
+  width: 18em;
+  height: 12em;
+  margin-top: 1em;
+  margin-right: 1em;
+  border: 1px solid green;
+}

@@ -25,7 +25,7 @@ function HomePage(props) {
 
   const subTitle = <>
     <p>{contentAuthor}</p>
-    <a className='btn btn-secondary' href='https://www.paseka.cz/produkt/prasina-1-2-vydani/'>Koupit</a>
+    <Link to="/buy" className='btn btn-secondary'>Koupit knihu</Link>
   </>
 
   const style = {

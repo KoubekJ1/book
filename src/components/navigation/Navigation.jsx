@@ -48,6 +48,7 @@ function Navigation(props) {
               <Link to="/opinion" className='nav-link top-link'>Názor</Link>
               <Link to="/test" className='nav-link top-link'>Test osobnosti</Link>
               <Link to="/theater" className='nav-link top-link'>Divadlo</Link>
+              <Link to="/buy" className='nav-link top-link'>Koupit</Link>
               <Link to="/about" className='nav-link top-link'>O stránce</Link>
             </Nav>
             <div className='volume-container'>
