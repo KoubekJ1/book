@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Buy.css';
 
 import bg from 'assets/cover.jpg';
@@ -11,6 +11,29 @@ function Buy() {
   }
 
   const [page, setPage] = useState(1);
+  const selectRef = useRef(null);
+
+  const selectCallback = (e) => {
+    switch (selectRef.current.value)
+    {
+      case "new":
+        setPage(1);
+        break;
+      case "used":
+        setPage(2);
+        break;
+      case "ebook":
+        setPage(3);
+        break;
+      case "audiobook":
+        setPage(4);
+        break;
+    }
+  }
+
+  useEffect(() => {
+    selectRef.current.addEventListener("change", selectCallback);
+  }, [])
 
   return (
     <>
@@ -19,11 +42,11 @@ function Buy() {
         <h1>Koupit knihu</h1>
         <div className='buy-container'>
           <label htmlFor="type">Druh</label><br />
-          <select className='form-select' name="type" id="type" data-bs-theme="dark">
-            <option value={"new"} onClick={() => setPage(1)}>Nová</option>
-            <option value={"used"} onClick={() => setPage(2)}>Použitá</option>
-            <option value={"ebook"} onClick={() => setPage(3)}>E-Kniha</option>
-            <option value={"audiobook"} onClick={() => setPage(4)}>Audiokniha</option>
+          <select ref={selectRef} className='form-select' name="type" id="type" data-bs-theme="dark">
+            <option value={"new"}>Nová</option>
+            <option value={"used"}>Použitá</option>
+            <option value={"ebook"}>E-Kniha</option>
+            <option value={"audiobook"}>Audiokniha</option>
           </select>
 
           {page == 1 ?
@@ -62,3 +85,10 @@ function Buy() {
 }
 
 export default Buy;
+
+/*
+<option value={"new"} onClick={() => setPage(1)}>Nová</option>
+<option value={"used"} onClick={() => setPage(2)}>Použitá</option>
+<option value={"ebook"} onClick={() => setPage(3)}>E-Kniha</option>
+<option value={"audiobook"} onClick={() => setPage(4)}>Audiokniha</option>
+*/
