@@ -2,8 +2,16 @@
   padding: 3em;
 }
 
-.test-content {
+.result-container {
   text-align: center;
+}
+
+.character-container {
+  margin-left: 40vw;
+  margin-right: 40vw;
+}
+
+.test-content {
   margin-left: 25%;
   margin-right: 25%;
   width: 50%;
@@ -11,16 +19,16 @@
 
 .test-button {
   margin-top: 1em;
-  margin-right: 1em;
-  width: 20vw;
+  width: 20%;
 }
 
 .hidden {
   display: none;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .test-content {
+    text-align: center;
     margin: 0;
     width: 100%;
   }

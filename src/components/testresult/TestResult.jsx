@@ -1,5 +1,4 @@
 import Character from '../character/Character';
-import TestCharacter from '../test/testcharacter/TestCharacter';
 import './TestResult.css';
 
 import jirka from 'assets/jirka.jpg';
@@ -60,7 +59,9 @@ function TestResult(props) {
 
   return (
     <>
-      <Character character={character} />
+      <div className='char-container'>
+        <Character character={character} />
+      </div>
       <p className="desc-text">{desc}</p>
     </>
   )

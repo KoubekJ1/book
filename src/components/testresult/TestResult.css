@@ -1,4 +1,18 @@
 .desc-text {
   margin-top: 5em;
   margin-left: 0em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.char-container {
+  margin-left: 40vw;
+  margin-right: 40vw;
+}
+
+@media only screen and (max-width: 800px) {
+  .char-container {
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
 }

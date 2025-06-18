@@ -15,6 +15,10 @@ function TestPage() {
     backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")"
   }
 
+  /*const style2 = {
+    backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")"
+  }*/
+
   const { answers, answerIndexes } = useContext(TestContext);
 
   const [page, setPage] = useState(0);
@@ -32,9 +36,24 @@ function TestPage() {
 
   const nextButton = <Button className='test-button' variant='secondary' disabled={answerIndexes[page] == undefined} onClick={() => { setPage(page + 1); }}>Další</Button>;
   const previousButton = <Button className='test-button' variant='secondary' onClick={() => { setPage(page - 1); }}>Předchozí</Button>;
-  const submitButton = <Button className='test-button' variant='secondary' onClick={() => { setTestFinished(true) }}>Hotovo</Button>;
+  const submitButton = <Button className='test-button' variant='secondary' disabled={answerIndexes[page] == undefined} onClick={() => { setTestFinished(true) }}>Hotovo</Button>;
 
   let y = 0;
+
+  if (testFinished)
+  {
+    return (
+      <>
+        <Navigation/>
+        <div className='anim background-long result-container' style={style}>
+          <div>
+            <TestResult answers={answers}/>
+          </div>
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <Navigation />

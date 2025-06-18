@@ -17,24 +17,27 @@ function CharactersPage() {
   const char3 = { name: "Tonda", brief: "Jirkův nejlepší kamarád", extra: "Jirkův dlouholetý nejlepší kamarád. Jirkou byl odstrčen poté, co poznal jeho sestřenici En, což ho nesmírně ranilo.", img: tonda }
 
   const style = {
-    backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")"
+    backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(" + bg + ")",
+    padding: 0
   }
 
   return (
     <>
       <Navigation></Navigation>
       <Container fluid className='anim background-long' style={style}>
-        <Row>
-          <Col className='char-col'>
-            <Character character={char1}></Character>
-          </Col>
-          <Col className='char-col'>
-            <Character character={char2}></Character>
-          </Col>
-          <Col className='char-col'>
-            <Character character={char3}></Character>
-          </Col>
-        </Row>
+        <div className='chara-container'>
+          <Row>
+            <Col className='char-col'>
+              <Character character={char1}></Character>
+            </Col>
+            <Col className='char-col'>
+              <Character character={char2}></Character>
+            </Col>
+            <Col className='char-col'>
+              <Character character={char3}></Character>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </>
   )

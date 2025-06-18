@@ -2,8 +2,7 @@
   transition-duration: 0.2s;
   width: 20vw;
   height: 20vw;
-  margin-top: 3em;
-  margin-left: 3em;
+  margin: 0;
 }
 
 .imgcontainer:hover {
@@ -33,8 +32,8 @@
   .imgcontainer {
     width: 70vw;
     height: 70vw;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    /*margin-left: 15vw;
+    margin-right: 15vw;*/
   }
 
   .imgcontainer:hover {

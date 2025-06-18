@@ -1,0 +1,14 @@
+.chara-container {
+  margin-top: 3em;
+  margin-left: 3em;
+}
+
+.char-col {
+  margin-bottom: 10em !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .chara-container {
+    margin-left: 15vw;
+  }
+}
